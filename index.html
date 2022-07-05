@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js ">
+    </script>
+    <title>Self Portfolio</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: cursive;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        position: sticky;
+        top: 0%;
+        background-color: white;
+    }
+    
+    .nav-links a {
+        color: rgb(7, 2, 33);
+    }
+    /* LOGO */
+    
+    .logo {
+        font-size: 34px;
+        font-weight: bold;
+        color: rgb(7, 2, 37);
+        cursor: pointer;
+    }
+    /* NAVBAR MENU */
+    
+    .menu {
+        display: flex;
+        gap: 1em;
+        font-size: 18px;
+    }
+    
+    .menu li:hover {
+        background-color: whitesmoke;
+        border-radius: 5px;
+        transition: 0.3s ease;
+    }
+    
+    .menu li {
+        padding: 5px 14px;
+    }
+    /* DROPDOWN MENU */
+    
+    .services {
+        position: relative;
+    }
+    
+    .dropdown {
+        padding: 1em 0;
+        position: absolute;
+        /*WITH RESPECT TO PARENT*/
+        display: none;
+        border-radius: 8px;
+        top: 35px;
+    }
+    
+    .services:hover .dropdown {
+        display: block;
+    }
+    
+    .pic {
+        min-height: 85vh;
+        background: url(images/p1.jpg);
+        background-size: cover;
+        display: flex;
+    }
+    
+    .second {
+        height: 66.6vh;
+        width: 850px;
+        display: flex;
+        background: rgb(245, 242, 242);
+        margin-left: 23%;
+        margin-top: 9%;
+    }
+    
+    .footer {
+        height: 10vh;
+        width: 850px;
+        background: rgb(2, 3, 38);
+        margin-left: 23%;
+    }
+    
+    .secondpart {
+        width: 100%;
+        height: 50vh;
+        background-color: rgb(245, 244, 244);
+    }
+    
+    .img img {
+        width: 400px;
+        height: 66.6vh;
+    }
+    
+    .info {
+        margin: auto;
+    }
+    /* Style all font awesome icons */
+    
+    .fa {
+        padding: 20px;
+        font-size: 30px;
+        width: 50px;
+        text-align: center;
+        text-decoration: none;
+    }
+    /* Add a hover effect if you want */
+    
+    .fa:hover {
+        opacity: 0.7;
+    }
+    /* Set a specific color for each brand */
+    /* Facebook */
+    
+    .fa-facebook {
+        color: white;
+    }
+    /* Twitter */
+    
+    .fa-twitter {
+        color: white;
+    }
+    
+    .fa-linkedin {
+        color: white;
+    }
+    
+    .blue-color {
+        color: white;
+    }
+    
+    .icon div {
+        align-items: center;
+    }
+    
+    .about {
+        text-align: center;
+        box-sizing: border-box;
+        margin: auto;
+        width: 850px;
+    }
+    
+    .education {
+        text-align: center;
+        margin: auto;
+        width: 850px;
+        height: 90vh;
+    }
+    
+    .line {
+        background-color: rgb(16, 4, 61);
+        text-decoration: underline;
+        display: flex;
+        height: 1.5px;
+    }
+    
+    table {
+        border-collapse: collapse;
+    }
+    
+    .left,
+    .middle {
+        width: 600px;
+        height: 210px;
+    }
+    
+    .sec,
+    .thi {
+        width: 600px;
+        height: 160px;
+    }
+    
+    .fourthpart {
+        width: 100%;
+        height: 75vh;
+        background-color: rgb(239, 241, 246);
+    }
+    
+    .program,
+    .program1 {
+        float: left;
+        background-color: rgb(56, 58, 98);
+        padding: 15px;
+        cursor: pointer;
+        margin: auto 20px;
+        width: 430px;
+        height: 9vh;
+        color: white;
+        text-align: center;
+        font-size: 15px;
+        font-weight: lighter;
+    }
+    
+    .program {
+        margin-left: 310px;
+    }
+    
+    .fifthpart {
+        width: 100%;
+        height: 80vh;
+    }
+    
+    .firstP {
+        width: 100%;
+        height: 50vh;
+    }
+    
+    .sixpart {
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(239, 241, 246);
+    }
+    
+    * {
+        box-sizing: border-box
+    }
+    /* Slideshow container */
+    
+    .slideshow-container {
+        max-width: 60%;
+        position: relative;
+        margin: auto;
+    }
+    /* Hide the images by default */
+    
+    .mySlides {
+        display: none;
+        margin-left: 400px;
+    }
+    /* Next & previous buttons */
+    
+    .prev {
+        cursor: pointer;
+        width: auto;
+        padding: 16px;
+        color: rgb(4, 14, 39);
+        font-weight: bold;
+        font-size: 25px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+    
+    .next {
+        cursor: pointer;
+        padding: 16px;
+        color: rgb(4, 14, 39);
+        font-weight: bold;
+        font-size: 25px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        margin-left: 633px;
+    }
+    /*Next and previous buttons*/
+    
+    .button {
+        margin: auto;
+    }
+    /* Position the "next button" to the right */
+    
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+    /* On hover, add a black background color with a little bit see-through */
+    
+    .prev:hover,
+    .next:hover {
+        background-color: rgb(188, 228, 237);
+    }
+    /* The dots/bullets/indicators */
+    
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin-left: 2px;
+        margin-top: 550px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+    
+    .active,
+    .dot:hover {
+        background-color: #717171;
+    }
+    /* Fading animation */
+    
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+    
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+        to {
+            opacity: 1
+        }
+    }
+    
+    .lastpart {
+        width: 100%;
+        height: 80vh;
+    }
+    
+    .container,
+    .box {
+        display: table;
+    }
+    
+    .container .box .box-row {
+        display: table-row;
+    }
+    
+    .container .box .firstP {
+        display: table-cell;
+    }
+    
+    .endpart {
+        width: 100%;
+        height: 80vh;
+        background-color: rgb(239, 241, 246);
+    }
+    
+    .copy {
+        width: 100%;
+        height: 10vh;
+    }
+    /* endpart.............*/
+    
+    .slide {
+        margin-left: 400px;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: 750px 490px;
+    }
+    
+    .slide1 {
+        background-image: url("images/intershipN.jpg");
+        width: 65%;
+        height: 100%;
+    }
+    
+    .slide2 {
+        background-image: url("images/spark.jpg");
+        width: 65%;
+        height: 100%;
+    }
+    
+    .slide3 {
+        background-image: url("images/suven.jpg");
+        width: 65%;
+        height: 100%;
+    }
+    
+    .arrow {
+        cursor: pointer;
+        position: absolute;
+        top: 627%;
+        margin-top: -30px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+    }
+    
+    #arrow-left {
+        border-width: 25px 25px 25px 0;
+        border-color: transparent rgb(56, 58, 98) transparent transparent;
+        left: 0;
+        margin-left: 360px;
+    }
+    
+    #arrow-right {
+        border-width: 25px 0 25px 25px;
+        border-color: transparent transparent transparent rgb(56, 58, 98);
+        right: 0;
+        margin-right: 330px;
+    }
+    
+    .program1:hover {
+        background-color: rgb(127, 130, 186);
+        color: rgb(93, 88, 93);
+    }
+    
+    .program:hover {
+        background-color: rgb(127, 130, 186);
+        color: rgb(93, 88, 93);
+    }
+    
+    .firstP {
+        width: 350px;
+        height: 41vh;
+        background-color: rgb(163, 163, 196);
+        text-align: center;
+    }
+    
+    .firstP:hover {
+        background-color: rgb(170, 165, 230);
+        color: whitesmoke;
+    }
+    
+    #first {
+        width: 350px;
+        height: 41vh;
+        background-color: rgb(163, 163, 196);
+        text-align: center;
+    }
+    
+    #first:hover {
+        background-color: rgb(170, 165, 230);
+    }
+    
+    #first1 {
+        width: 350px;
+        height: 41vh;
+        background-color: rgb(163, 163, 196);
+        text-align: center;
+    }
+    
+    #first1:hover {
+        background-color: rgb(170, 165, 230);
+    }
+    
+    #first2 {
+        width: 350px;
+        height: 41vh;
+        background-color: rgb(170, 165, 230);
+        text-align: center;
+    }
+    
+    #internship2 {
+        width: 330px;
+        height: 41vh;
+        background-color: rgb(170, 165, 230);
+        text-align: center;
+    }
+    
+    #internship3 {
+        width: 360px;
+        height: 41vh;
+        background-color: rgb(170, 165, 230);
+        text-align: center;
+    }
+</style>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Swati Shekokar</div>
+        <!-- LOGO -->
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+
+            <!-- NAVIGATION MENUS -->
+            <div class="menu" onclick="navlinksMenu();">
+                <li><a href="#home" onclick="navlinksMenu();">Home</a></li>
+                <li><a href="#about" onclick="navlinksMenu();">About</a></li>
+                <li><a href="#education" onclick="navlinksMenu();">Education</a></li>
+                <li><a href="#software skills" onclick="navlinksMenu();">Software Skills</a></li>
+                <li class="services">
+                    <a href="#projects" onclick="navlinksMenu();">Projects</a>
+
+                </li>
+                <li><a href="#certificates" onclick="navlinksMenu();">Certificates</a></li>
+                <li><a href="#internships" onclick="navlinksMenu();">Internships</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <!--first part-->
+    <section class="pic" id="home">
+
+        <div class="second">
+
+            <div class="img"> <img src="images/mine.jpg" alt="error"></div>
+            <div class="info">
+                <h1>Swati Shekokar</h1>
+                <br><br><br>
+                <h3>Phone No:</h3>
+                <p>+91-7507502842</p>
+                <br>
+                <h3>Email:</h3>
+                <p>swatishekokar11@gmail.com</p>
+                <br>
+                <h3>Address:</h3>
+                <p>Ram Krishan Nagar,</p>
+                <p>Saoner-441107</p>
+                <br>
+                <h3>Date Of Birth:</h3>
+                <p>July 10th, 2002</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="secondpart" id="about">
+        <div class="footer">
+            <div id="icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- Add font awesome icons -->
+                <a href="https://m.facebook.com/swati.shekokar.9" class='fa fa-facebook  blue-color'></a>
+                <a href="https://twitter.com/ShekokarSwati?t=wdcGpGfGS6Bfdw6ekjAp-g&s=09" class='fa fa-twitter blue-color'></a>
+                <a href="https://www.linkedin.com/in/swati-shekokar-b13540219" class='fa fa-linkedin blue-color'></a>
+                <a href="https://github.com/SwatiShekokar" class='fa fa-github blue-color'></a>
+
+            </div>
+
+        </div>
+        <br><br><br>
+
+        <div class="about">
+            <h2>Hello! I'am Swati</h2><br>
+            <p>I'am Front-End Web Developer & I hava Knowledge of HTML, CSS, Javascript(basic), Java. and My Portfolio is a representation of all that I've learned and accomplished as a Computer Science Engineering Student.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="section third">
+
+        <br>
+        <div class="e"><br>
+            <h2 style="text-align: center;">Education</h2><br>
+            <div class="line"></div>
+        </div>
+        <div class="education" id="education">
+            <div>
+                <table class="edu">
+                    <tr>
+                        <td class="left">
+                            <h2 style="margin-left: -120px;">2020-2023</h2>
+                            <p style="text-align: left; margin-left: 90px;">Bachelor's Degree </p>
+                        </td>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <td class="middle"><br>
+                            <h2 style="text-align:left ;">University</h2>
+                            <p style="text-align: justify;">I'am Pursuing Computer Science Engineering From S. B. Jain Institute Of Technology, Management & Research, Nagpur. With A Aggregate Of 81.92% Till 5th Sem.</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="sec">
+                            <h2 style="margin-left: -120px;">2017-2019</h2>
+                            <p style="text-align: left; margin-left: 90px;">Higher Secondary Education </p>
+                        </td>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <td class="thi"><br>
+                            <h2 style="text-align:left ;">HSC</h2>
+                            <p style="text-align: justify;">I Have Completed My Higher Secondary Education From Bhalerao Junior College of Science, Saoner. With A Aggregate Of 58.92%. </p>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="sec">
+                            <h2 style="margin-left: -120px;">2016-2017</h2>
+                            <p style="text-align: left; margin-left: 88px;">Secondary School Certificate </p>
+                        </td>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <td class="thi"><br>
+                            <h2 style="text-align:left ;">SSC</h2>
+                            <p style="text-align: justify;">I Have Completed My Schooling From Bhalerao High School, Saoner. With A Aggregate Of 79.80%.</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="fouth">
+
+        <div class="fourthpart"><br>
+            <h2 style="text-align: center;" id="software skills">Software Skills</h2><br>
+            <div class="line"></div>
+
+            <div class="skills" id="skills"><br><br><br><br><br>
+                <div class="program">
+                    <h2>HyperText Markup Language</h2>
+
+                </div>
+
+                <div class="program1">
+                    <h2>Cascading Style Sheets</h2>
+
+                </div>
+                <br><br><br><br><br>
+                <div class="program">
+                    <h2>Front-End</h2>
+
+                </div>
+
+                <div class="program1">
+                    <h2>Javascript(Basic)</h2>
+
+                </div>
+                <br><br><br><br><br>
+                <div class="program">
+                    <h2>Java</h2>
+
+                </div>
+
+                <div class="program1" style="padding: 10px;">
+                    <h2>Tools</h2>
+                    <p>Github, Visual Studio Code, MS Office.</p>
+
+                </div>
+
+
+
+            </div>
+
+    </section><br>
+
+    <section class="fifth">
+        <div class="fifthpart">
+            <div class="fifthpart"><br>
+                <h2 style=" text-align: center;" id="projects">Projects</h2><br>
+                <div class="line"></div>
+                <br><br><br><br>
+                <center>
+                    <div class="container">
+                        <div class="box">
+                            <div class="box-row">
+                                <div class="firstP">
+                                    <br>
+
+                                    <h1> Mini Project</h1>
+                                    <br>
+                                    <p style="font-size: 18px;">Academia Meet: An app for E-leaening.</p><br>
+                                    <p style="font-size: 18px;">Technologies Used: XML, Java, Firebase.</p>
+
+
+                                </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <div class="firstP" id="first">
+                                    <br>
+
+                                    <h1>Personal Project</h1>
+                                    <br>
+                                    <p style="font-size: 18px;">Personal Portfolio Website: Where you can find my personal details.</p><br>
+                                    <p style="font-size: 18px;">Technologies Used: HTML, CSS, Javascript.</p><br>
+
+
+
+                                </div>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <div class="firstP" id="first1">
+                                    <br>
+
+                                    <h1>Personal Project</h1>
+                                    <br>
+                                    <p style="font-size: 18px;">Cinema HD: An site similar to Hotstar.com.</p><br>
+                                    <p style="font-size: 18px;">Technologies Used: HTML, CSS, Javascript.</p><br>
+                                    <p style="font-size: 19px;"><a href=" https://swatishekokar.github.io/Cinema-HD/">Task Link!</a></p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="six">
+        <div class="sixpart"><br>
+            <h2 style=" text-align: center;" id="certificates">Certificates</h2><br>
+            <div class="line"></div>
+
+
+            <br><br>
+
+
+            <!-- Slideshow container -->
+            <div class="slideshow-container"></div>
+
+
+            <div class="mySlides fade">
+
+
+                <img src="/images/training.png" style="width:65%">
+                <div class="button" style="margin:-280px auto;">
+                    <a class="prev" onclick="plusSlides(-1)" style="margin-top: 200px;">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+            </div>
+
+
+            <div class="mySlides fade">
+
+
+                <img src="/images/javaC.jpg" style="width:65%">
+                <div class="button" style="margin:-280px auto;">
+                    <a class="prev" onclick="plusSlides(-1)" style="margin-top: 200px;">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+            </div>
+
+            <div class="mySlides fade">
+
+                <img src="/images/WDC.jpg" style="width:65%">
+                <div class="button" style="margin:-280px auto;">
+                    <a class="prev" onclick="plusSlides(-1)" style="margin-top: 200px;">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+
+            </div>
+
+            <div class="mySlides fade">
+
+                <img src="images/JSC.jpg" style="width:65%">
+                <div class="button" style="margin:-280px auto;">
+                    <a class="prev" onclick="plusSlides(-1)" style="margin-top: 200px;">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+
+            </div>
+            <div class="mySlides fade">
+
+                <img src="images/zerotoHC.jpg" style="width:65%">
+                <div class="button" style="margin:-280px auto;">
+                    <a class="prev" onclick="plusSlides(-1)" style="margin-top: 200px;">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+
+            </div>
+            <div class="mySlides fade">
+
+                <img src="images/IITP.jpg" style="width:65%">
+                <div class="button" style="margin:-280px auto;">
+                    <a class="prev" onclick="plusSlides(-1)" style="margin-top: 200px;">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+
+            </div>
+            <div class="mySlides fade">
+
+                <img src="images/RDBMS.jpg" style="width:65%">
+                <div class="button" style="margin:-280px auto;">
+                    <a class="prev" onclick="plusSlides(-1)" style="margin-top: 200px;">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+
+            </div>
+            <div class="mySlides fade">
+
+                <img src="images/communication.jpg" style="width:65%">
+                <div class="button" style="margin:-280px auto;">
+                    <a class="prev" onclick="plusSlides(-1)" style="margin-top: 200px;">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+
+            </div>
+            <div class="mySlides fade">
+
+                <img src="images/communication (2).jpg" style="width:65% ">
+                <div class="button" style="margin:-280px auto;">
+                    <a class="prev" onclick="plusSlides(-1)" style="margin-top: 200px;">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+
+            </div>
+
+
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+                <span class="dot" onclick="currentSlide(8)"></span>
+                <span class="dot" onclick="currentSlide(9)"></span>
+
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+    <section class="last">
+        <div class="lastpart"><br><br><br>
+            <h2 style="text-align: center;" id="internships">Internships</h2><br>
+            <div class="line"></div>
+            <br><br> <br><br>
+
+            <center>
+                <div class="container">
+                    <div class="box">
+                        <div class="box-row">
+                            <div class="firstP" id="first2">
+                                <br>
+
+                                <h1>Internship 1</h1>
+                                <br>
+                                <p style="font-size: 18px;">Internship in AWS (5 weeks) </p><br>
+                                <p style="font-size: 18px;">Task: Deploy a Cloud.</p><br>
+                                <p style="font-size: 18px;"><a href="https://cloudwatch.amazonaws.com/dashboard.html?dashboard=Test&context=eyJSIjoidXMtZWFzdC0xIiwiRCI6ImN3LWRiLTE5MTEwMTMwNTUwNSIsIlUiOiJ1cy1lYXN0LTFfbllGZGg1MzJWIiwiQyI6IjZidTN1bHU0dmlkcXUwc2tlbzhubjJvZTR1IiwiSSI6InVzLWVhc3QtMTplNjIyMzlkMy01Y2JiLTQwYzgtOWI4Ny1jMDA1ZTc5MjVhMDkiLCJNIjoiUHVibGljIn0%3D"> Task Link!</a>                                    , <span><a href="https://drive.google.com/drive/folders/1ADqxJRSg9Ls_vYR05_PHq9iVhlanTrDx ">Drive Link</a></span>
+                                </p>
+
+
+
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div class="firstP" id="internship2">
+                                <br>
+
+                                <h1>Internship 2</h1>
+                                <br>
+                                <p style="font-size: 18px;">Internship at the Sparks Foundation (4 weeks)</p><br>
+                                <p style="font-size: 18px;">Task: Design Basic Banking System.</p><br>
+                                <p style="font-size: 18px;"><a href="https://swatishekokar.github.io/Basic-Banking-System/
+                                    "> Task Link!</a>
+                                </p>
+
+
+
+
+                            </div>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div class="firstP" id="internship3">
+                                <br>
+
+                                <h1>Internship 3</h1>
+                                <br>
+                                <p style="font-size: 18px;">Internship at Suven Consultants & Technology Pvt. Ltd. (2 weeks)</p><br>
+                                <p style="font-size: 18px;">Tasks: i) Blogging, ii) CSS Animations, iii) Voter Registration</p><br>
+                                <p style="font-size: 19px;"><a href="https://swatishekokar.github.io/Project2--Medium-Blogging/">Task 1</a> , <a href="https://swatishekokar.github.io/Project3--CSS3-Animations/">Task 2</a>, <a href="https://swatishekokar.github.io/Project4--Voter-Registration/">Task 3</a>
+                                </p>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </center>
+
+        </div>
+
+    </section>
+
+    <section class="end" id="internships">
+        <div class="endpart">
+            <br><br>
+            <div id="arrow-left" class="arrow"></div>
+            <div class="slide slide1"></div>
+            <div class="slide slide2"></div>
+            <div class="slide slide3"></div>
+            <div id="arrow-right" class="arrow"></div>
+
+        </div>
+
+    </section>
+
+
+    <section class="copy">
+        <div class="copy" style="width: 100%; height: 10vh; background-color:rgb(56, 58, 98); text-align: center; color: white; font-size: 20px; cursor: pointer;"><br>
+            <p> ©2022 Created By :- Swati Shekokar</p>
+        </div>
+
+    </section>
+
+
+</body>
+
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+
+
+
+    let sliderImages = document.querySelectorAll(".slide"),
+        arrowLeft = document.querySelector("#arrow-left"),
+        arrowRight = document.querySelector("#arrow-right"),
+        current = 0;
+
+    // Clear all images
+    function reset() {
+        for (let i = 0; i < sliderImages.length; i++) {
+            sliderImages[i].style.display = "none";
+        }
+    }
+
+    // Initial slide
+    function startSlide() {
+        reset();
+        sliderImages[0].style.display = "block";
+    }
+
+    // Show previous
+    function slideLeft() {
+        reset();
+        sliderImages[current - 1].style.display = "block";
+        current--;
+    }
+
+    // Show next
+    function slideRight() {
+        reset();
+        sliderImages[current + 1].style.display = "block";
+        current++;
+    }
+
+    // Left arrow click
+    arrowLeft.addEventListener("click", function() {
+        if (current === 0) {
+            current = sliderImages.length;
+        }
+        slideLeft();
+    });
+
+    // Right arrow click
+    arrowRight.addEventListener("click", function() {
+        if (current === sliderImages.length - 1) {
+            current = -1;
+        }
+        slideRight();
+    });
+
+    startSlide();
+
+
+    window.addEventListener('scroll', function() {
+        var
+            nav = document.querySelector('nav');
+        nav.classList.menu('sticky', window.scrollY > 0);
+    })
+
+    function navlinksMenu() {
+        var navlinksMenu = document.querySelector('.menu');
+        var navlinksMenu = document.querySelector('.nav-links');
+        navlinksMenu.classList.menu('active');
+
+
+        nav - links.classList.menu('active');
+    }
+</script>
+
+</html>
